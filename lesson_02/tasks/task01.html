@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Задача 0. Обчислити значення виразів</h1>
+	<ol>
+		<li>
+			<p>S1=a+12+b</p>
+			<!--
+				Дано
+				a
+				b
+				c
+			-->
+			<script>
+				// 1.Введення необхідних даних
+				let a = parseFloat(prompt('Введіть перше число', '0'))
+				let b = parseFloat(prompt('Введіть друге число', '0'))
+				let c = parseFloat(prompt('Введіть третє число', '0'))
+				// 2.Обчислення результату
+				const S1 = a + 12 + b
+				// .Виведення результату
+				document.write(`<p> ${a} + 12 + ${b} = ${S1} </p>`)
+			</script>
+		</li>
+		<li>
+			<p><img src="img/01.png" alt="01"></p>
+			<script>
+				// 2.Обчислення результату
+				const S2 = Math.sqrt ((a + b) / 2 * a)
+				// .Виведення результату
+				document.write(`<p> Квадратний корінь з числа (${a} + ${b}) / 2 * ${a} = ${S2.toFixed(3)} </p>`)
+			</script>
+		</li>
+		<li>
+			<p><img src="img/02.png" alt="02"></p>
+			<script>
+				// 2.Обчислення результату
+				const S3 = Math.cbrt ((a + b) * c)
+				// .Виведення результату
+				document.write(`<p> Кубічний корінь числа (${a} + ${b}) * ${c} = ${S3.toFixed(3)} </p>`)
+			</script>
+		</li>
+		<li>
+			<p><img src="img/03.png" alt="02"></p>
+			<script>
+				// 2.Обчислення результату
+				const S4 = Math.sin(a / -b)
+				// .Виведення результату
+				document.write(`<p> Синус числа ${a} / -${b}) = ${S4.toFixed(3)} </p>`)
+			</script>
+		</li>
+	</ol>
+</body>
+</html>

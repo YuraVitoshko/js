@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Задача 6.</h1>
+	<p> З клавіатури вводяться вартість товару та кількість одиниць 3 товарів. Обчислити вартість кожного товару окремо та загальну вартість. Вивести чек (як у супермаркеті) використовуючи елементи розмітки.</p>
+
+	<script>
+		// 1.Вводимо необхідні дані
+		let orangesQuantity = parseInt(prompt('Введіть кількість апельсинів', '1'))
+		let bananasQuantity = parseInt(prompt('Введіть кількість бананів', '1'))
+		let applesQuantity = parseInt(prompt('Введіть кількість яблук', '1'))
+		let orangesCost = parseFloat(prompt('Введіть ціну одного апельсина', '1'))
+		let bananasCost = parseFloat(prompt('Введіть ціну одного банана', '1'))
+		let applesCost = parseFloat(prompt('Введіть ціну одного яблукв', '1'))
+		// 2.Знаходимо результат
+		const priceOranges = orangesQuantity * orangesCost
+		const priceBananas = bananasQuantity * bananasCost
+		const priceApples = applesQuantity * applesCost
+		const allPrice = priceOranges + priceBananas + priceApples
+		// 3.Виводимо результат
+		document.write(`
+		<table border="2px">
+			<tr>
+				<th>Назва товару</th>
+				<th>Кількість</th>
+				<th>Ціна за одиницю</th>
+				<th>Сума</th>
+			</tr>
+			<tr>
+				<th>Апельсини</th>
+				<td> ${orangesQuantity} </td>
+				<td> ${orangesCost} </td>
+				<td> ${priceOranges} </td>
+			</tr>
+			<tr>
+				<th>Банани</th>
+				<td> ${bananasQuantity} </td>
+				<td> ${bananasCost} </td>
+				<td> ${priceBananas} </td>
+			</tr>
+			<tr>
+				<th>Яблука</th>
+				<td> ${applesQuantity} </td>
+				<td> ${applesCost} </td>
+				<td> ${priceApples} </td>
+			</tr>
+			<tr>
+				<th>Загальна вартість</th>
+				<td></td>
+				<td></td>
+				<td> ${allPrice} </td>
+			</tr>
+		</table>
+		`)
+	</script>
+</body>
+</html>
