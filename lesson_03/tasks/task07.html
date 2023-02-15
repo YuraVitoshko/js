@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 7.</h1>
+	<p>З клавіатури вводиться номер місяця. Вивести до якої пори він відноситься.</p>
+
+	<script>
+		// 1.Введення необхідних даних
+		let numberMonth = parseInt(prompt('Введіть номер місяця', ''))
+		const monthJanuary = 1
+		const monthFebruary = 2
+		const monthMarch = 3
+		const monthApril = 4
+		const monthMay = 5
+		const monthJune = 6
+		const monthJuly = 7
+		const monthAugust = 8
+		const monthSeptember = 9
+		const monthOctober = 10
+		const monthNovember = 11
+		const monthDecember = 12
+		
+		// Виведення результату
+		if ((numberMonth == monthJanuary) || (numberMonth == monthFebruary) || (numberMonth == monthDecember)){
+			document.write(`Зараз пора року - Зима`)
+		}
+		else if((numberMonth == monthMarch) || (numberMonth == monthApril) || (numberMonth == monthMay)){
+			document.write(`Зараз пора року - Весна`)
+		} 
+		else if((numberMonth == monthJune) || (numberMonth == monthJuly) || (numberMonth == monthAugust)){
+			document.write(`Зараз пора року - Літо`)
+		} 
+		else if((numberMonth == monthSeptember) || (numberMonth == monthOctober) || (numberMonth == monthNovember)){
+			document.write(`Зараз пора року - Осінь`)
+		} 
+		else{
+			document.write(`Введено некоректне значення`)
+		}
+	</script>
+</body>
+</html>

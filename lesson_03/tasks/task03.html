@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 3.</h1>
+	<p>Випадковим чином генерується число від 1 до 5. Спробуйте вгадати число за 2 спроби.</p>
+
+	<script>
+		// 1.Введення необхідних даних
+		let num = parseInt(prompt('Спробуйте вгадати ціле число від 1 до 5 за дві спроби (Спроба №1)', '1'))
+		let numRandom = 1 + Math.floor(Math.random() * 5)
+		
+		// Виведення результату
+		if (num === numRandom){
+			document.write('Вітаємо, ви вгадали число')
+		}
+		else{
+			alert('Ви не вгадали число, спробуйте ще раз')
+			num = parseInt(prompt('Спробуйте вгадати ціле число від 1 до 5 за дві спроби (Спроба №2)', '1'))
+		}
+		if (num === numRandom){
+			document.write('Вітаємо, ви вгадали число')
+		}
+		else{
+			document.write('Ви не вгадали число, всі спроби вичерпано!')
+		}
+	</script>
+</body>
+</html>
