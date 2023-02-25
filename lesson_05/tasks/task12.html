@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<!-- Доробити========================================================== -->
+	<h1>Задача 12.</h1>
+	<p>
+		Ігровий автомат. Випадково вибираємо зображення у 3 позиціях. Вибір у кожній позиції вибирається як одне з чотирьох зображень. Вивести ці зображення і повідомити виграш користувача (три перших зображення 100 грн, три других – 200, три третіх – 500, три четвертих зображення – 1000грн). Використати цикли і switch (для вибору зображення за номером).
+	</p>
+
+	
+	<script>
+	// Позначаємо кожне зображення номером
+		
+		let imageNum01 = 0,
+			imageNum02 = 0,
+			imageNum03 = 0,
+			imageNum04 = 0
+		
+		for (let i = 1; i <= 3; i++) {
+			let pos = Math.floor(Math.random() * 4) + 1;
+			
+
+			switch (pos) {
+				case 1: imageNum01 = 'Ваш виграш становить 100грн';
+				imageNum01++;
+					break;
+				case 2: imageNum02 = 'Ваш виграш становить 200грн';
+				imageNum02++;
+					break;
+				case 3: imageNum03 = 'Ваш виграш становить 500грн';
+				imageNum03++;
+					break;
+				case 4: imageNum04 = 'Ваш виграш становить 1000грн';
+				imageNum04++;
+					break;
+			}
+		}
+			// Не додумав як далі доробити
+
+
+		
+	</script>
+</body>
+
+</html>

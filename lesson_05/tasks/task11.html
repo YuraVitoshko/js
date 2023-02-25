@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 11.</h1>
+	<p>
+		Знайти суму 5 непарних чисел, що знаходяться між заданими користувачем числами.
+	</p>
+
+
+	<script>
+		// Вводимо дані
+		const userNum1 = parseInt(prompt('Задайте додатне перше число яке має бути менше за друге'))
+		const userNum2 = parseInt(prompt('Задайте друге число яке більше за перше'))
+
+		let sum
+		let firstOddNum
+		// Шукаємо перше непарне число більше за найменше задане
+		if (firstOddNum = userNum1 % 2 !== 0) {
+			firstOddNum = userNum1
+		} else firstOddNum = userNum1 + 1
+
+		sum = firstOddNum
+		// Створюємо цикл в якому будемо додавати число 2 до визначеного найменшого непарного числа і 
+		// будемо визначати суму
+		for (let i = 0; i < 4; i++) {
+			firstOddNum = firstOddNum + 2
+			// firstOddNum += 2
+			sum = sum + firstOddNum
+			// sum += firstOddNum
+		}
+		document.write(`Сума 5 непарних чисел між ${userNum1} і ${userNum2} = ${sum}`)
+	</script>
+</body>
+
+</html>

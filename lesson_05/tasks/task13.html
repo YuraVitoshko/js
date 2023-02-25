@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 13.</h1>
+	<p>
+		Морський бій. Комп’ютер випадково розташовує одиночний корабель на полі розміром N*M. Маючи К снарядів користувач намагається потопити корабель.
+	</p>
+
+
+	<script>
+		// Питаємо у користувача розмір поля та кількість снарядів
+		const userColumns = parseInt(prompt('Задаємо розмір поля, вкажіть кількість колонок?'))
+		const userRows = parseInt(prompt('Задаємо розмір поля, вкажіть кількість рядків?'))
+
+		const K = parseInt(prompt('Введіть кількість снарядів'))
+
+		// Визначаємо рандомно координати корабля на полі
+		let compRandomColumn = 1 + Math.floor(Math.random() * userColumns)
+		let compRandomRow = 1 + Math.floor(Math.random() * userRows)
+		
+
+		for (let i = 0; i < K; i++) {
+			let userColumnShot = parseInt(prompt('Вкажіть координати колонки'))
+			let userRowShot = parseInt(prompt('Вкажіть координати рядка'))
+			if ((userColumnShot === compRandomColumn) && (userRowShot === compRandomRow)) {
+				alert('Вітаємо, ви потопили корабель!') 
+				break;
+			}
+			else (
+				alert('Ви не потопили корабель, спробуйте ще раз!')
+			)
+		}
+	</script>
+</body>
+
+</html>

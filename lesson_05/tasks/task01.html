@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 1.</h1>
+	<p>
+		Вивести з використанням циклів маркований список з випадковими числами (1-100). Кількість випадкових чисел вводиться користувачем.
+	</p>
+
+	<script>
+		// Просимо користувача ввести дані
+		const count = parseInt(prompt('Введіть кількість випадкових чисел'))
+
+		let i = 0
+// Виводимо результат
+		while (i < count) {
+			let randomNum = Math.floor(Math.random() * 100 + 1);
+			i++;
+			document.write(`
+			<ul>
+				<li>${randomNum}</li>
+			</ul>
+		`);
+		}
+
+		// for (let i = 0; i < count; i++) {
+		// 	let randomNum = Math.floor(Math.random() * 100 + 1);
+		// 	document.write(`
+		// 	<ul>
+		// 		<li>${randomNum}</li>
+		// 	</ul>
+		// 	`);
+		// }
+	</script>
+	
+</body>
+</html>
