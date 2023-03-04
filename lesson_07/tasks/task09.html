@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 9.</h1>
+	<p>
+		Дано покази температур(довільна кількість).Розробити функцію, яка дозволить підрахувати кількість від’ємних показів температури.
+	</p>
+
+	<script>
+		
+		function getAvarageValue(R) {
+			let sumTemp = 0
+			let counter = 0
+			for (let i = 1; i <= R; i++) {
+				// питаємо в користувача показник температури
+				const userTempIndicator = parseFloat(prompt(`Введіть ${i} показник температури`))
+				// якщо показник < 0 додаємо його до суми sumTemp
+				if (userTempIndicator < 0) {
+					sumTemp += userTempIndicator
+					counter ++
+				}
+			}
+			// знаходимо середнє значення додатних показників sumTemp / кількість додатних показників
+			return sumTemp / counter
+		}
+		// питаємо в користувача скільки він хоче дати R (показників температури)
+		const R = parseInt(prompt('R ='))
+
+		const result = getAvarageValue(R)
+
+		document.write(`Середній показник температури = ${result} градуси(ів) за цельсієм`)
+
+	</script>
+
+	
+	
+</body>
+</html>

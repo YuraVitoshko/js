@@ -24,7 +24,7 @@
 		while (amountPaid < totalPrice) {
 			let remaining = totalPrice - amountPaid // Залишок до сплати
 			alert((`Вам потрібно сплатити ${remaining}грн`))
-			amountPaid = amountPaid + prompt(`Введіть суму до сплати`)
+			amountPaid = amountPaid + parseFloat(prompt(`Введіть суму до сплати`))
 		}
 		alert('Оплата успішна!')
 	</script>

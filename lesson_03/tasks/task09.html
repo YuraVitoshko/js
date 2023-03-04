@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 2.</h1>
+	<p>Комп’ютер випадковим чином вибирає початок і кінець проміжку (проміжок повинен знаходитися в межах від 1 до 100). Користувач вводить число і виграє, якщо число знаходиться у цьому проміжку, або розташоване від нього (від лівого або правого краю) не більше ніж на 10.</p>
+	
+	<script>
+		// 1.Введення необхідних даних
+		let num = parseInt(prompt('Введіть ціле число від 1 до 100', '1'))
+		let numRandom1 = 1 + Math.floor(Math.random() * 50)
+		let numRandom2 = 51 + Math.floor(Math.random() * 50)
+		// Виведення результату
+		if (num >= (numRandom1 - 10) && num <= (numRandom2 + 10)){
+			document.write('Ви вгадали число в межах проміжку')
+		}
+		else {
+			document.write('Ви не вгадали число в межах проміжку')
+		}
+	</script>
+</body>
+</html>

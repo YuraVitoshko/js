@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 3.</h1>
+	<p>
+		Створити окремі функції, які для 4 чисел знаходять:
+		<ol>
+			<li>суму;</li>
+			<li>добуток;</li>
+			<li>середнє арифметичне;</li>
+			<li>мінімальне значення. </li>
+		</ol>
+	</p>
+
+	<script>
+	// Функція сцми 4-х чисел
+		function getSum(x1, x2, x3, x4) {
+			return x1 + x2 + x3 + x4
+		}
+	// Функція добутку 4-х чисел
+		function getProduct(x1, x2, x3, x4) {
+			return x1 * x2 * x3 * x4
+		}
+	// Функція середнбого арифметичного 4-х чисел
+		function getAvarageValue(x1, x2, x3, x4) {
+			return (x1 + x2 + x3 + x4) / 4
+		}
+	// Функція мінімальне значення серед 4-х чисел
+		function getMinValue(x1, x2, x3, x4) {
+			let minValue = x1
+
+			if (minValue >= x2) {
+				minValue = x2
+			} else if (minValue >= x3) {
+				minValue = x3
+			} else if (minValue >= x4) {
+				minValue = x4
+			} else 
+				minValue = minValue
+
+				return minValue
+		}
+
+		// Вводимо значення змінних a, b, c, d
+		const a = parseFloat(prompt('a = '))
+		const b = parseFloat(prompt('b = '))
+		const c = parseFloat(prompt('c = '))
+		const d = parseFloat(prompt('d = '))
+
+		// Використовуємо всі функції
+		const sum = getSum(a, b, c, d)
+		document.write(`Sum = ${sum} <br>`)
+
+		const product = getProduct(a, b, c, d)
+		document.write(`product = ${product} <br>`)
+
+		const avarageValue = getAvarageValue(a, b, c, d)
+		document.write(`Avarage value = ${avarageValue} <br>`)
+
+		const minValue = getMinValue(a, b, c, d)
+		document.write(`Min value = ${minValue} <br>`)
+
+	</script>
+	
+</body>
+</html>

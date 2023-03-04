@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 6.</h1>
+	<p>Полювання. Заєць знаходиться у верхньому лівому кутку поля. Поле складається з двох рядків і двох стовпців.
+	За один крок заєць може стрибнути у будь-яку із вільних клітинок. Користувач ставить пастку вказуючи номер рядка і
+	стовпця клітинки. Якщо заєць потрапляє у пастку, то користувач виграв і отримав 100 балів. Якщо користувач зловить зайця
+	за другою спробою, то одержує 50 балів.</p>
+
+	<script>
+		// 1.Введення необхідних даних
+		let rowUser = parseInt(prompt('Введіть номер рядка 1 або 2', '1'))
+		let columnUser = parseInt(prompt('Введіть номер стовпця 1 або 2', '1'))
+
+		let rowRandom = 1 + Math.floor(Math.random() * 2)
+		let columnRandom = 1 + Math.floor(Math.random() * 2)
+		// Виведення результату
+		if (rowUser === rowRandom && columnUser === columnRandom)
+			document.write('Вітаємо, ви спіймали зайця і отримуєте 100 балів!')
+		else{
+			alert('Спробуйте ще раз спіймати зайця!')
+			rowUser = parseInt(prompt('Введіть номер рядка 1 або 2', '1'))
+			columnUser = parseInt(prompt('Введіть номер стовпця 1 або 2', '1'))
+		}
+		if (rowUser === rowRandom && columnUser === columnRandom)
+			document.write('Вітаємо, ви спіймали зайця з другої спроби і отримуєте 50 балів!')
+		else document.write('Ви не спіймали зайця!')
+			
+	</script>
+</body>
+
+</html>

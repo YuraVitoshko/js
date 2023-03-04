@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Задача 3.</h1>
+	<p>З клавіатури вводяться вартість одиниці та кількість одиниць двох товарів. Вивести на екран вартість кожного з видів товарів окремо і загальну вартість.</p>
+
+	<script>
+		// 1.Вводимо необхідні дані
+		let product01 = parseFloat(prompt('Введіть кількість товару №1', '0'))
+		let product02 = parseFloat(prompt('Введіть кількість товару №2', '0'))
+
+		let costProduct01 = parseFloat(prompt('Введіть вартість однієї одиниці товару №1', '0'))
+		let costProduct02 = parseFloat(prompt('Введіть вартість однієї одиниці товару №2', '0'))
+		// 2.Знаходимо результат
+		const allcostProduct01 = product01 * costProduct01
+		const allcostProduct02 = product02 * costProduct02
+		const allPrice = allcostProduct01 + allcostProduct02
+		// 3.Виводимо результат
+		document.write(`
+		<table border="2px">
+			<tr>
+				<th>Назва товару</th>
+				<th>Кількість</th>
+				<th>Ціна за одиницю</th>
+				<th>Сума</th>
+			</tr>
+			<tr>
+				<th>Товар №1</th>
+				<td> ${product01} </td>
+				<td> ${costProduct01} </td>
+				<td> ${allcostProduct01} </td>
+			</tr>
+			<tr>
+				<th>Товар №2</th>
+				<td> ${product02} </td>
+				<td> ${costProduct02} </td>
+				<td> ${allcostProduct02} </td>
+			</tr>
+			<tr>
+				<th>Загальна вартість</th>
+				<td></td>
+				<td></td>
+				<td> ${allPrice} </td>
+			</tr>
+		</table>
+		`)
+	</script>
+</body>
+</html>

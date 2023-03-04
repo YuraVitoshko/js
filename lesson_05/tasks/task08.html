@@ -20,12 +20,12 @@
 		const userNum = parseInt(prompt('Загадайте число від 1 до 30'))
 
 		// Створюємо цикл відгадування числа комп'ютером
-		out: for (let i = 0; i < 3; i++) {
+		for (let i = 0; i < 3; i++) {
 			let compNum = 1 + Math.floor(Math.random() * 30)
-			let isUserNum = (window.confirm(`Ваше число ${compNum}`))
+			let isUserNum = confirm(`Ваше число ${compNum}`)
 			if (isUserNum) {
 				alert(`Комп'ютер вгадав ваше число з ${i + 1} спроби!`);
-				break out;
+				break;
 			} else 
 				alert(`Комп'ютер не зміг відгадати ваше число з ${i + 1} спроби.`);
 		}

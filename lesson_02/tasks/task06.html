@@ -12,13 +12,15 @@
 
 	<script>
 		// 1.Вводимо необхідні дані
-		let secondsNumber = parseFloat(prompt('Введіть кількість секунд', '0'))
+		let secondsNumber = parseInt(prompt('Введіть кількість секунд', '0'))
+		const hourInSec = 60 * 60
+		const minuteInSec = 60
 		// 2.Знаходимо результат
-		let minutesNumber = secondsNumber / 60
-		let hoursNumber = secondsNumber / 3600
+		let hours = Math.floor(secondsNumber / hourInSec)
+		let minutes = Math.floor((secondsNumber % hourInSec) / minuteInSec)
 		// 3.Виводимо результат
 		document.write(`
-		<p> Кількість в хвилинвх: ${minutesNumber.toFixed(3)}хв <br> Кількість в годинах: ${hoursNumber.toFixed(3)}год </p>
+		<p> З початку доби пройшло: ${hours}год, ${minutes}хв </p>
 		`)
 	</script>
 </body>

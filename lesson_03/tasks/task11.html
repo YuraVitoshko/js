@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 4.</h1>
+	<p>Морський бій. Ворожий корабель, може знаходитись в одному із квадратів (кількість квадратів вводиться з клавіатури), які
+	розташовані лінійно (один за одним) на річці.
+	
+	Позиція корабля визначається комп’ютером випадковим чином.
+	Гра відбувається за правилами:
+	1) якщо користувач стріляє у заданий квадрат (тобто вводиться номер квадрата), то корабель потоплено;
+	2) якщо корабель знаходиться у сусідньому по відношенню до квадрата, де знаходиться корабель, то корабель пошкоджено
+	(про це повідомляємо користувача).
+	За два постріли спробувати потопити корабель.
+</p>
+
+	<script>
+		// 1.Введення необхідних даних
+		const quantitySquares = parseInt(prompt('Введіть кількість квадратів від 1 до 10', '1'))
+		let userShot = parseInt(prompt('Введіть номер квадрата для пострілу', '1'))
+		
+		let numRandom = 1 + Math.floor(Math.random() * quantitySquares)
+		// Виведення результату
+		if (userShot === numRandom)
+			document.write('Вітаємо, ви потопили корабель!')
+		else if (userShot === numRandom - 1 || userShot === numRandom + 1)
+			userShot = parseInt(prompt('Ви пошкодили корабель, спробуйте його потопити!'))
+			if (userShot === numRandom)
+			document.write('Вітаємо, ви потопили корабель!')
+			else 
+			document.write('Ви не потопили корабель!')
+	</script>
+</body>
+
+</html>

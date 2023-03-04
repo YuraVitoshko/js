@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 8.</h1>
+	<p>
+		Створити функцію, яка виводить банер (у функцію передаються: зображення, заголовок та посилання, куди переходимо при кліку на зображення(тег img повине знаходитись у середині тега a: <a> <img src=”шлях”></a>
+	</p>
+
+	<script>
+		
+			function getBunnerDisplay(img, title, link) {
+				return `<h1>${title}</h1> <a target='_blank' href="${link}"><img src="${img}"></a>`
+			}
+
+
+		const image1 = `/lesson_05/img/01.jpeg`
+		const title = `Title`
+		const link = `https://google.com`
+
+		const bunnerDisplay = getBunnerDisplay(image1, title, link)
+
+		document.write(`${bunnerDisplay}`)
+
+	</script>
+
+	
+	
+</body>
+</html>

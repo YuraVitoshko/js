@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Задача 5.</h1>
+	<p>Визначити, яку платню одержить на фірмі сумісник за виконану роботу, якщо йому нараховано S грн., а податок становить 20%.</p>
+
+	<script>
+		// 1.Вводимо необхідні дані
+		let salary = parseFloat(prompt('Введіть неоподатковану зарплату робітника', '0'))
+		const tax = 0.2
+		// 2.Знаходимо результат
+		const taxInHryvnia = salary * tax
+		const actualSalary = salary - taxInHryvnia
+		// 3.Виводимо результат
+		document.write(`
+		Неоподаткована зарплата робітника: ${salary}грн <br>
+		Податок в гривнях: ${taxInHryvnia}грн <br>
+		Зарплата робітника з урахуванням податку: ${actualSalary}грн
+		`)
+	</script>
+</body>
+</html>

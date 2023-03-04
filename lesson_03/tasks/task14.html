@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 7.</h1>
+	<p>Гра в кості. Правила гри:
+		1) користувач може кинути кості не більше двох разів (користувач сам вирішує чи робити, чи не робити другий кидок);
+		2) якщо випадає парне число, то кількість балів збільшується на це число;
+		3) якщо випадає непарне число, то кількість балів зменшується на це число;
+		4) виграє той, у кого кількість балів більша.
+	</p>
+
+	<script>
+		// 1.Введення необхідних даних
+		let user1 = parseInt(prompt('Введіть номер рядка 1 або 2', '1'))
+		let user2 = parseInt(prompt('Введіть номер стовпця 1 або 2', '1'))
+
+		// Виведення результату
+		if (rowUser === rowRandom && columnUser === columnRandom)
+			document.write('Вітаємо, ви спіймали зайця і отримуєте 100 балів!')
+		else {
+			alert('Спробуйте ще раз спіймати зайця!')
+			rowUser = parseInt(prompt('Введіть номер рядка 1 або 2', '1'))
+			columnUser = parseInt(prompt('Введіть номер стовпця 1 або 2', '1'))
+		}
+		if (rowUser === rowRandom && columnUser === columnRandom)
+			document.write('Вітаємо, ви спіймали зайця з другої спроби і отримуєте 50 балів!')
+		else document.write('Ви не спіймали зайця!')
+
+	</script>
+</body>
+
+</html>

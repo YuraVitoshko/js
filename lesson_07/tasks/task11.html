@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 000</h1>
+	
+	<script>
+	// Створити функцію яка дозволяє визначити чи вказаний місяць (1-12) є літнім
+		// function isSummerMonth(monthNum) {
+		// 	return monthNum >= 6 && monthNum <= 8
+		// }
+		// const userMonthNum = parseInt(prompt('Введіть номер місяця'))
+		// if (isSummerMonth(userMonthNum)) document.write('Summer')
+		// 	else document.write('Not summer')
+
+		//========================================================================================================================================================
+		
+		// Створити функцію, яка дозволяє визначити чи є працівник пенсіонером (>=65years)
+		// function isRetireeAge(age) {
+		// 	return age >= 65
+		// }
+		// const userAge = parseInt(prompt('Введіть Ваш вік'))
+		// if (isRetireeAge(userAge)) document.write('Ви пенсіонер')
+		// 	else document.write('Ви не пенсіонер')
+
+		//========================================================================================================================================================
+		
+		// Створити функцію, яка дозволяє визначити чи є вказаний день робочим
+		// function isWorkingDay(dayNum) {
+		// 	return dayNum >= 1 && dayNum <= 5
+		// }
+		// const userDay = parseInt(prompt('Введіть дент тижня'))
+		// if (isWorkingDay(userDay)) document.write('День робочий')
+		// 	else document.write('День не робочий')
+
+			//========================================================================================================================================================
+			
+			// Створити функцію, яка дозволяє визначити за числовим значенням
+			//  значення оцінки прописом
+			// function getScoreTitle(score) {
+			// 	let result
+			// 	switch (score) {
+			// 		case 1:
+			// 		case 2:
+			// 		case 3: result = 'незадовільно'
+			// 			break;
+			// 		case 4:
+			// 		case 5:
+			// 		case 6: result = 'задовільно'
+			// 			break;
+			// 		case 7:
+			// 		case 8:
+			// 		case 9: result = 'добре'
+			// 			break;
+			// 		default: result = 'відмінно'
+			// 			break;
+			// 	}
+			// 	return result
+			// }
+
+			// const userScore = parseInt(prompt('Введіть свою оцінку'))
+			// document.write(getScoreTitle(userScore))
+
+			//========================================================================================================================================================
+			
+			// Поступово генеруються R випадкових чисел у вказаному діапазоні (1-100).
+			// Знайти суму тільки парних
+			// 	function getRundomNum(minV, maxV) {
+			// 		return minV + Math.floor(Math.random() * (maxV - minV + 1))
+			// 	}
+
+			// function getEvenNum(R, minValue = 1, maxValue = 100) {
+			// 	// return 1 + Math.floor(Math.random() * 100)
+			// 	// R разів повторити
+			// 	let sum = 0
+			// 	for (let i = 0; i < R; i++) {
+			// 		// згенерувати число randNum
+			// 		// Якщо воно парне то додати до суми
+			// 		let randNum = getRundomNum(minValue, maxValue)
+			// 		Перевіряємо чи є число парним
+			// 		if (randNum % 2 === 0) sum += randNum
+			// 	}
+			// 	return sum
+			// }
+			// const R = parseInt(prompt('Введіть кількість повторів генерації'))
+			// const startNum = parseInt(prompt('Введіть початкок діапазону'))
+			// const endNum = parseInt(prompt('Введіть кінець діапазону'))
+			
+			// const sumEvenNum = getEvenNum(R, startNum, endNum)
+			// document.write(`Сума праних чисел = ${sumEvenNum}`)
+
+			//========================================================================================================================================================
+			
+			// Поступово генеруються випадкові пари чисел (R - пар). Користувач вводить число і 
+			// виграє, якщо його число співпало хоча би з одним із них.
+			// Підрахувати кількість вгаданих чисел
+
+			function getRundomNum(minV, maxV) {
+				return minV + Math.floor(Math.random() * (maxV - minV + 1))
+			}
+
+			function getGuessedNum(R, minV, maxV) {
+				let quantityGuessNumbers = 0
+				for (let i = 1; i <= R; i++) {
+					// згенерувати 2-ва випадкових числа в заданому діапазоні
+					let randNum1 = getRundomNum(minV, maxV)
+					let randNum2 = getRundomNum(minV, maxV)
+					// Число користувача
+					const userNum = parseInt(prompt(`Введіть ${i} число`))
+
+					if (userNum === randNum1 || userNum === randNum2) {
+						alert('Ви вгадали число!')
+					} else alert('Невдача спробуйте ще!')
+
+					// перевірити чи число користувача співпало хоча б з одним з генерованих 
+					// чисел
+					if (userNum === randNum1 || userNum === randNum2) {
+						// рахуємо кількість вгаданих чисел
+						quantityGuessNumbers ++
+					}
+				}
+				return quantityGuessNumbers
+			}
+
+			const R = parseInt(prompt('Введіть кількість повторів генерації'))
+			const startNum = parseInt(prompt('Введіть початкок діапазону'))
+			const endNum = parseInt(prompt('Введіть кінець діапазону'))
+
+			const result = getGuessedNum(R, startNum, endNum)
+
+			document.write(`Кількість вгаданих чисел = ${result}`)
+	</script>
+	
+</body>
+</html>

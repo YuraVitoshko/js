@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Задача 7.</h1>
+	<p>Скласти алгоритм, який обчислює цілу і дробову частину даного числа х. Наприклад: число 23,56  => ціла: 23, дробова: 0,56.</p>
+
+	<script>
+		// 1.Вводимо необхідні дані
+		let x = parseFloat(prompt('Введіть значення змінної x' , '23.56'))
+		// 2.Знаходимо результат
+		const whole = Math.trunc(x)
+		const fractional = x % 1
+		// 3.Виводимо результат
+		document.write(`
+		<p>
+			Значення x: ${x} <br> Ціла частина: ${whole} <br> Дробова частина: ${fractional.toFixed(3)}
+		</p>
+		`)
+	</script>
+</body>
+</html>

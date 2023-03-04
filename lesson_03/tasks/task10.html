@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 3.</h1>
+	<p>Комп’ютер загадує число від 1 до 10. Двоє користувачів надають свої відповіді. Виграє той, у кого число знаходиться ближче до загаданого комп’ютером числа.</p>
+
+	<script>
+		// 1.Введення необхідних даних
+		let numUser1 = parseInt(prompt('Спробуйте вгадати ціле число від 1 до 10', '1'))
+		let numUser2 = parseInt(prompt('Спробуйте вгадати ціле число від 1 до 10', '1'))
+
+		let numRandom = 1 + Math.floor(Math.random() * 10)
+		// Виведення результату
+		let difference1 = numRandom - numUser1
+		let difference2 = numRandom - numUser2
+		if (difference1 < difference2)
+			document.write('Переможець, користувач 1')
+		else 
+			document.write('Переможець, користувач 2')
+	</script>
+</body>
+</html>

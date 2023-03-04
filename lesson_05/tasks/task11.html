@@ -21,22 +21,22 @@
 		const userNum2 = parseInt(prompt('Задайте друге число яке більше за перше'))
 
 		let sum
-		let firstOddNum
+		let num // Перше непарне число більше за найменше задане
 		// Шукаємо перше непарне число більше за найменше задане
-		if (firstOddNum = userNum1 % 2 !== 0) {
-			firstOddNum = userNum1
-		} else firstOddNum = userNum1 + 1
+		if (num = userNum1 % 2 !== 0) {
+			num = userNum1 + 2
+		} else num = userNum1 + 1
 
-		sum = firstOddNum
+		sum = num
 		// Створюємо цикл в якому будемо додавати число 2 до визначеного найменшого непарного числа і 
 		// будемо визначати суму
 		for (let i = 0; i < 4; i++) {
-			firstOddNum = firstOddNum + 2
-			// firstOddNum += 2
-			sum = sum + firstOddNum
-			// sum += firstOddNum
+			num = num + 2
+			// num += 2
+			sum = sum + num
+			// sum += num
 		}
-		document.write(`Сума 5 непарних чисел між ${userNum1} і ${userNum2} = ${sum}`)
+		document.write(`Сума перших 5 непарних чисел між ${userNum1} і ${userNum2} = ${sum}`)
 	</script>
 </body>
 

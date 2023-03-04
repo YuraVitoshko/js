@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Задача 4.</h1>
+	<p>З клавіатури вводиться вік дитини. Вивести на екран через скільки років вона піде у школу, вступить і закінчить університет.</p>
+
+	<script>
+		// 1.Вводимо необхідні дані
+		let ageChild = parseInt(prompt('Введіть вік дитини', '0'))
+
+		// 2.Знаходимо результат
+		const toSchool = 6 - ageChild
+		const toUniversity = 17 - ageChild
+		const finishUniversity = 17 - ageChild + 5
+		// 3.Виводимо результат
+		document.write(`
+		Вік дитини: ${ageChild} <br>
+		Піде у школу через: ${toSchool}роки(ів) <br>
+		Вступить до університету через: ${toUniversity}роки(ів) <br>
+		Закінчить університет через: ${finishUniversity}роки(ів)
+		`)
+	</script>
+</body>
+</html>

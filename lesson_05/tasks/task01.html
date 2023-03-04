@@ -19,15 +19,15 @@
 
 		let i = 0
 // Виводимо результат
+	document.write(`<ul>`)
 		while (i < count) {
 			let randomNum = Math.floor(Math.random() * 100 + 1);
 			i++;
 			document.write(`
-			<ul>
-				<li>${randomNum}</li>
-			</ul>
+			<li>${randomNum}</li>
 		`);
 		}
+	document.write(`</ul>`)
 
 		// for (let i = 0; i < count; i++) {
 		// 	let randomNum = Math.floor(Math.random() * 100 + 1);

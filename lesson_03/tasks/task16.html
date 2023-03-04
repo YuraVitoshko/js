@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 9.</h1>
+	<p>З клавіатури вводиться перша літера розширення файлу («html», «doc», «jpeg», «mp3», «xls»). Вивести на екран назву
+	програми, яка може відкрити цей тип файлу.
+	</p>
+
+	<script>
+		// 1.Введення необхідних даних
+		const firstLetterFile = prompt('Введіть першу літеру розширення одного з файлів html, doc, jpeg, mp3, xls')
+		
+
+		// Виведення результату
+		if (firstLetterFile === 'h')
+		document.write('VS Code')
+		else if (firstLetterFile === 'd')
+		document.write('Microsoft Word')
+		else if (firstLetterFile === 'j')
+		document.write('Paint')
+		else if (firstLetterFile === 'm')
+		document.write('Aimp')
+		else if (firstLetterFile === 'x')
+		document.write('Microsoft Excel')
+		else document.write('Введене некоректне значення!')
+	</script>
+</body>
+
+</html>

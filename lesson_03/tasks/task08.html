@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 1.</h1>
+	<p> На екран виводиться меню:
+		1. Веселий
+		2. Сумний
+		3. Обурений
+		Користувач вводить номер пункту меню і на екрані з’являється відповідне зображення смайла. 
+		</p>
+
+	<script>
+		// 1.Введення необхідних даних
+		let itemMenu = parseInt(prompt('Введіть номер пункту меню від 1 до 3', '1'))
+		const itemMenuNum1 = 1
+		const itemMenuNum2 = 2
+		const itemMenuNum3 = 3
+		let happySmile = 'happy smile face'
+		let sadSmile = 'sad smile'
+		let angrySmile = 'angry smile face'
+		// Виведення результату
+		if (itemMenu == itemMenuNum1){
+			document.write(`${happySmile}`)
+		}
+		else if (itemMenu == itemMenuNum2){
+			document.write(`${sadSmile}`)
+		}
+		else if (itemMenu == itemMenuNum3){
+			document.write(`${angrySmile}`)
+		}
+		else {
+			document.write('Введене некоректне значення!')
+		}
+	</script>
+</body>
+</html>
