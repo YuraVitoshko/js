@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 7.</h1>
+	<p>
+		Дано послідовність платіжок протягом року. Знайти сумарну кількість грошей за:
+		<ul>
+			<li>за весь рік;</li>
+			<li>у першій половині року;</li>
+			<li>у другій половині року;</li>
+			<li>за літо;</li>
+			<li>за ІІ квартал;</li>
+			<li>за парні місяці (з парними номерами);</li>
+			<li>за місяці, які є початковими у сезоні (весна, літо, осінь, зима).</li>
+		</ul>
+	</p>
+
+	<script>
+		// Функція введення масиву
+		function newArray(itemsNumber) {
+			let arr = []
+			for (let i = 1; i <= itemsNumber; i++) {
+				const monthMoney = parseFloat(prompt(`Введіть кількість грошей до оплати за ${i} місяць`))
+				arr.push(monthMoney)
+			}
+			return arr
+		}
+		// Функція для знаходження суми за певний період
+		function getSumPayment(paymentList, startMonthNum, EndMonthNum) {
+			let sum = 0
+			for (let month = startMonthNum - 1; month < EndMonthNum; month++) {
+				sum += paymentList[month]
+			}
+			return sum
+		}
+		// Функція для знаходження суми за парні місяці
+		function getSumEvenMonth(paymentList) {
+			let sum = 0
+			for (let i = 0; i < paymentList.length; i += 2) {
+				sum += paymentList[i]
+			}
+			return sum
+		}
+		// Функці для знаходження суми за перші місяці кожного сезону
+		function getSumFirstMonthSeason(paymentList) {
+			let sum = 0
+			for (let i = 0; i < paymentList.length; i += 3) {
+				sum += paymentList[i]
+			}
+			return sum
+		}
+		const paymentList = newArray(12)
+		// за весь рік;
+		const sumPaymentYear = getSumPayment(paymentList, 1, 12)
+		document.write(`Сума до сплати за весь рік = ${sumPaymentYear}грн <br>`)
+		// у першій половині року;
+		const sumFirstHalfYear = getSumPayment(paymentList, 1, 6)
+		document.write(`Сума до сплати за першу половину року = ${sumFirstHalfYear}грн <br>`)
+		// у другій половині року;
+		const sumSecondHalfYear = getSumPayment(paymentList, 7, 12)
+		document.write(`Сума до сплати за другу половину року = ${sumSecondHalfYear}грн <br>`)
+		// // за літо;
+		const sumPaymentSummer = getSumPayment(paymentList, 6, 8)
+		document.write(`Сума до сплати за літо = ${sumPaymentSummer}грн <br>`)
+		// // за ІІ квартал;
+		const sumPaymentSecondQuarter = getSumPayment(paymentList, 4, 6)
+		document.write(`Сума до сплати за 2-ий квартал року = ${sumPaymentSecondQuarter}грн <br>`)
+		// за парні місяці (з парними номерами);
+		const sumEvenMonth = getSumEvenMonth(paymentList)
+		document.write(`Сума до сплати за парні місяці року = ${sumEvenMonth}грн <br>`)
+		// за місяці, які є початковими у сезоні (весна, літо, осінь, зима).
+		const sumFirstMonthSeason = getSumFirstMonthSeason(paymentList)
+		document.write(`Сума до сплати за початкові місяці сезонів = ${sumFirstMonthSeason}грн`)
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 9.</h1>
+	<p>
+		Морський бій.Користувач вводить кількість клітинок одновимірного масиву та кількість одиночних кораблів.Комп’ютер довільно розміщує ці одиночні кораблі у масиві по один у клітинці(якщо у клітинці 0, то клітинка пуста, якщо 1 – то це означає, що там є корабель.Користувач вводить номер клітинки, куди стріляє.Гра продовжується до тих пір, поки не будуть потоплені усі кораблі.
+	</p>
+
+	<script>
+		const cellUserNum = parseInt(prompt(`Введіть кількість клітинок`))
+			const singleNumShip = parseInt(prompt(`Введіть кількість одиночних кораблів`))
+			// Функція створення масиву з 0-ми
+			function cellArray(cellUserNum) {
+				arr =[]
+				for (let i = 0; i < cellUserNum; i++) {
+					arr.push(0)
+				}
+				return arr
+			}
+			// Функція рандомного числа
+			function getRandom(cellUserNum) {
+				return 1 + Math.floor(Math.random() * cellUserNum)
+			}
+
+			// Функція розміщення кораблів
+			function getPlacementShips(cellNum, singleNumShip) {
+				for (let i = 0; i < singleNumShip; i++) {
+					let shipLocation = getRandom(cellNum.length)
+					cellNum[shipLocation] = 1
+				}
+				return cellNum
+			}
+
+			// Функція координату пострілу користувача
+			function getUserShot() {
+				const shot = parseInt(prompt(`Введіть номер клітинки по якій бажаєте зробити постріл від 1 до ${cellNum.length}`))
+				return shot - 1 // індекс масиву
+			}
+
+			// Масив з 0-ми
+			let cellNum = cellArray(cellUserNum)
+			cellNum = getPlacementShips(cellNum, singleNumShip)
+
+			let numSunkenShips = 0
+
+			while (numSunkenShips < singleNumShip) {
+				const shot = getUserShot()
+				if (cellNum[shot] === 1) {
+					alert(`Ви потопили корабель на клітинці ${shot + 1}`)
+					cellNum[shot] = 0
+					numSunkenShips ++
+				} else {
+					alert('Ви не потопили корабель, спробуйте ще раз!')
+				}
+			}
+
+			alert('Ви потопили всі кораблі, гру закінчено!')
+
+	</script>
+	
+</body>
+</html>

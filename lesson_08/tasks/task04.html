@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 4.</h1>
+	<p>
+		Задача 4. Дано послідовність номерів автомобілів.Підрахувати кількість номерів, які :
+		<ul>
+			<li>починаються на букву «А»;</li>
+			<li>перша і остання літери співпадають;</li>
+			<li>складаються з більше ніш 5 символів;</li>
+		</ul>
+	</p>
+
+	<script>
+		const numCarsArray = ['AA9999AA', 'AB9999AK', 'KA9999AA', 'TAX', 'AA9999BC', 'CA9999AA',
+		'TOP', 'AA9999SA', 'BOND']
+
+		let countStartingWith_a = 0;
+		let countFirstAndLastLetter = 0;
+		let countMoreThan_5_Symbol = 0;
+
+		// • починаються на букву «А»;
+		for (let i = 0; i < numCarsArray.length; i++) {
+			const num = numCarsArray[i]
+			
+			if (num[0] === 'A') {
+				countStartingWith_a ++
+			}
+			// • перша і остання літери співпадають;
+			if (num[0] === num[num.length - 1]) {
+				countFirstAndLastLetter ++
+			}
+
+			// • складаються з більше ніш 5 символів;
+			if (num.length > 5) {
+				countMoreThan_5_Symbol ++
+			}
+		}
+
+		document.write(`Кількість номерів які починаються на А = ${countStartingWith_a} <br>`)
+		document.write(`Кількість номерів перша і остання літери яких співпадають = ${countFirstAndLastLetter} <br>`)
+		document.write(`Кількість номерів які складаються з більше ніш 5 символів = ${countMoreThan_5_Symbol}`)
+	</script>
+	
+</body>
+</html>

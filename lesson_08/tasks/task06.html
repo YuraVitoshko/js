@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 6.</h1>
+	<p>
+		Дано послідовність цін товарів та назв(у окремих масивах).Вивести на екран ті, які може собі дозволити користувач(кількість грошей задається).
+		<ul>
+			<li>Приклад збереження даних</li>
+			<li>let productsPrices = [1000, 20, 31]</li>
+			<li>let productsTitles = [‘cheese’, ‘juice’, ‘bread’]</li>
+		</ul>
+	</p>
+
+	<script>
+		let productsPrices = [1000, 20, 31]
+			let productsTitles = ['cheese', 'juice', 'bread']
+			const numUserMoney = parseFloat(prompt(`Введіть суму яка у вас є`))
+
+			const arrayPossibleProductsPurchase = []
+
+			for (let i = 0; i < productsPrices.length; i++) {
+				if (numUserMoney>= productsPrices[i]) {
+					arrayPossibleProductsPurchase.push(productsTitles[i])
+				}
+			}
+
+			document.write(`Перелік товарів які може купити покупець: ${arrayPossibleProductsPurchase}`)
+	</script>
+	
+</body>
+</html>

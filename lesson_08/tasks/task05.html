@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 5.</h1>
+	<p>
+		Дано послідовність оцінок учня.Підрахувати кількість:
+		<ul>
+			<li>двійок;</li>
+			<li>кількість хороших оцінок(добре, відмінно);</li>
+			<li>кількість оцінок, які нижче середнього.</li>
+		</ul>
+	</p>
+
+	<script>
+										// 0  1  2  3  4  5  6  7  8  9  10
+			const scoreStudentArray = [4, 3, 4, 5, 2, 4, 5, 3, 4, 5, 2]
+
+			// Функція для визначення кількості 2-ок в масиві
+			function getNum_2(scoreStudentArray) {
+				let counter = 0
+				for (let i = 0; i < scoreStudentArray.length; i++) {
+					if (scoreStudentArray[i] === 2) {
+						counter++
+					}
+				}
+				return counter
+			}
+			const num_2 = getNum_2(scoreStudentArray)
+			document.write(`Кількість двійок = ${num_2} <br>`)
+			// Функція для визначення кількості хороших оцінок
+			function getNum_4_5(scoreStudentArray) {
+				let counter = 0
+				for (let i = 0; i < scoreStudentArray.length; i++) {
+					if (scoreStudentArray[i] > 3) {
+						counter++
+					}
+				}
+				return counter
+			}
+			const numGoodScores = getNum_4_5(scoreStudentArray)
+			document.write(`Кількість хороших оцінок = ${numGoodScores} <br>`)
+			// Функція для визначення середнього балу
+			function getAverageScore(scoreStudentArray) {
+				let sum = 0
+				for (let i = 0; i < scoreStudentArray.length; i++) {
+					sum += scoreStudentArray[i]
+				}
+				return sum / scoreStudentArray.length
+			}
+			const averageScore = getAverageScore(scoreStudentArray)
+			// Функція для визначення кількості оцінок вищих за середній бал
+			function getNumScoreAvarage(scoreStudentArray) {
+				let counter = 0
+				for (let i = 0; i < scoreStudentArray.length; i++) {
+					if (scoreStudentArray[i] > averageScore) {
+						counter++
+					}
+				}
+				return counter
+			}
+			const moreNumScoreAverage = getNumScoreAvarage(scoreStudentArray)
+			document.write(`Кількість оцінок вищих за середній бал = ${moreNumScoreAverage}`)
+	</script>
+	
+</body>
+</html>

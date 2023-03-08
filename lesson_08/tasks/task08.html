@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 8.</h1>
+	<p>
+		Дано одновимірний масив, у якому зберігається певна виграшна сума(елементи заповнюються випадковим чином значеннями від - 500 до 500).Надаючи користувачу можливість вибирати номери елементів(поки він не відмовиться).Знаходити сумарний виграш.
+	</p>
+
+	<script>
+		const prizeMoneyArray = [-400, 200, 150, 300, 300, -100, -50, 250]
+
+			function getSumPrizeMoney(prizeMoneyArray) {
+				let sum = 0
+				for (let i = 0; i < prizeMoneyArray.length; i++) {
+					const userNum = parseInt(prompt(`Введіть номер від 1 до 8 для вибору комірки з виграшом`))
+					const prizeMoney = prizeMoneyArray[userNum - 1]
+					sum += prizeMoney
+				}
+				return sum
+			}
+
+			const sumPrizeMoney = getSumPrizeMoney(prizeMoneyArray)
+			document.write(`Ваш виграш становить ${sumPrizeMoney}грн`)
+
+	</script>
+	
+</body>
+</html>

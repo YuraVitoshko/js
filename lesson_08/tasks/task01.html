@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 1.</h1>
+	<p>
+		Дано масив, який містить оцінки з К предметів. Знайти середній бал і з’ясувати до якої категорії він відноситься (відмінник, двійочник (має хоча би одну двійку), хорошист (оцінки добре і відмінно), трійочник(є хоча би одна трійка)).
+	</p>
+
+	<script>
+		// Функція введення масиву
+		function newArray(quantityScores) {
+			arr = []
+			for (let i = 1; i <= quantityScores; i++) {
+				const score = parseInt(prompt(`Введіть оцінку з ${i} предмету`))
+				arr.push(score)
+			}
+			return arr
+		}
+		const quantityScores = parseInt(prompt(`Введіть кількість предметів`))
+		const scoresSubjects = newArray(quantityScores)
+		// Функція для знаходження середнього балу
+		function getAvarageScore(scoresSubjects) {
+			sum = 0
+			for (let j = 0; j < scoresSubjects.length; j++) {
+				sum += scoresSubjects[j]
+			}
+			return sum / scoresSubjects.length
+		}
+		const avarageScore = getAvarageScore(scoresSubjects)
+		document.write(`Середній бал = ${avarageScore} <br>`)
+		// Функція для знаходження мінімального значення елементу з масиву
+		function getMinValue(scoresSubjects) {
+			let minValue = scoresSubjects[0]
+			for (let c = 1; c < scoresSubjects.length; c++) {
+				if (scoresSubjects[c] < minValue) {
+					minValue = scoresSubjects[c]
+				}
+			}
+			return minValue
+		}
+		const minScore = getMinValue(scoresSubjects)
+		// Функція для визначення категорії учня
+		function getCategoryStudent(minScore) {
+			let result
+				if (minScore < 3) {
+					result = `Учень двійочник`
+				} else if (minScore === 3) {
+					result = `Учень трійочник`
+				} else if (minScore === 4) {
+					result = `Учень хорошист`
+				} else result = `Учень відмінник`
+			return result
+		}
+		const categoryStudent = getCategoryStudent(minScore)
+		document.write(categoryStudent)
+	</script>
+	
+</body>
+</html>

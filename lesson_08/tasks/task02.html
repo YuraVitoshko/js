@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 2.</h1>
+	<p>
+		Дано масив, який зберігає кількість відвідувачів магазину протягом тижня. Вивести на екран:
+		<ul>
+			<li>номери днів, протягом яких кількість відвідувачів була меншою за 20;</li>
+			<li>номери днів, коли кількість відвідувачів була мінімальною;</li>
+			<li>номери днів, коли кількість відвідувачів була максимальною;</li>
+			<li>загальну кількість клієнтів у робочі дні та окремо загальну кількість клієнтів на вихідних.</li>
+		</ul>
+
+	</p>
+
+	<script>
+		// Функція введення масиву
+		function newArray(weekNumbers) {
+			let arr = []
+			for (let i = 1; i <= weekNumbers; i++) {
+				const peopleNumberWeek = parseInt(prompt(`Введіть кількість відвідувачів за ${i} день`))
+				arr.push(peopleNumberWeek)
+			}
+			return arr
+		}
+		const weekNumbers = 7
+		const weekArray = newArray(weekNumbers)
+		// номери днів, протягом яких кількість відвідувачів була меншою за 20;
+		// функція створення і додавання в масив днів в які відвідувачів було менше 20
+		function numberArray_20(weekArray) {
+			let arr = []
+			for (let i = 0; i < weekArray.length; i++) {
+				if (weekArray[i] < 20) {
+					arr.push(i+1)
+				}
+			}
+			return arr
+		}
+		const numberPeople_20 = numberArray_20(weekArray)
+		document.write(`Номери днів кількість відвідувачів яких менше за 20: ${numberPeople_20} <br>`)
+		// номери днів, коли кількість відвідувачів була мінімальною;
+		// Функція створення і додавання в масив номерів днів де відвідувачів було мінімум
+		function minArrayNumber(weekArray) {
+			let arrMin = [0]
+			for (let i = 1; i < weekArray.length; i++) {
+				if (weekArray[i] < weekArray[0]) {
+					arrMin = [i+1]
+				} else arrMin = [1]
+			}
+			return arrMin
+		}
+		const minPeopleNumber = minArrayNumber(weekArray)
+		document.write(`Мінімальна кількість відвідувачів була ${minPeopleNumber} дня <br>`)
+		// номери днів, коли кількість відвідувачів була максимальною;
+		// Функція створення і додавання в масив номерів днів де відвідувачів було максимум
+		function maxArrayNumber(weekArray) {
+			let arrMax = [0]
+			for (let i = 1; i < weekArray.length; i++) {
+				if (weekArray[i] > weekArray[0]) {
+					arrMax = [i + 1]
+				} else arrMax = [1]
+			}
+			return arrMax
+		}
+		const maxPeopleNumber = maxArrayNumber(weekArray)
+		document.write(`Максимальна кількість відвідувачів була ${maxPeopleNumber} дня <br>`)
+		// загальну кількість клієнтів у робочі дні та окремо загальну кількість клієнтів на вихідних.
+		// Функція створення і додавання в масив кількості клієнтів в робочі дні та вихідні
+		function sumArrayDay(weekArray, startNum, endNum) {
+			let sum = 0
+			for (let i = startNum - 1; i < endNum; i++) {
+				sum += weekArray[i]
+			}
+			return sum
+		}
+		const sumWorkingDay = sumArrayDay(weekArray, 1, 5)
+		document.write(`Кількість клієнтів в робочі дні =  ${sumWorkingDay} <br>`)
+		const sumOffDay = sumArrayDay(weekArray, 6, 7)
+		document.write(`Кількість клієнтів в вихідні дні =  ${sumOffDay}`)
+	</script>
+	
+</body>
+</html>
