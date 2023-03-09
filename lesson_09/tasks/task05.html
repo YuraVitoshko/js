@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 5.</h1>
+	<p>
+		Дано масив елементів. Знайти добуток додатних елементів
+	</p>
+
+	<script>
+		const newArr = [3, 2, -5, 3, -4, -1, 2, -3]
+		// Функція для знаходження добутку додатних елементів масиву
+		function getProductPositiveNum(newArr) {
+			let product = 1
+			for (const positiveNum of newArr) {
+				if (positiveNum > 0) {
+					product *= positiveNum
+				}
+			}
+			return product
+		}
+		const productElements = getProductPositiveNum(newArr)
+		document.write(`Добуток додатних елементів масиву = ${productElements}`)
+	</script>
+	
+</body>
+</html>

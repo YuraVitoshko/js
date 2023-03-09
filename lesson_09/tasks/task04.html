@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 4.</h1>
+	<p>
+		Дано масив елементів. Вивести на екран елементи, що більші за 100
+	</p>
+
+	<script>
+		const newArr = [150, 20, 50, 300, 150, 99, 105, 360]
+		// Функція для задавання відповідних значень елементам масиву
+		function getValueElements(newArr) {
+			const arr = []
+			for (const greater_100 of newArr) {
+				if (greater_100 > 100) {
+					arr.push(greater_100)
+				}
+			}
+			return arr
+		}
+		const newArray = getValueElements(newArr)
+		document.write(newArray)
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 10.</h1>
+	<p>
+		Дано масив цін у грн. Податок складає 20%. Сформувати масив, який буде містити величину сплаченого податку у грн.
+	</p>
+
+	<script>
+		// Функція створення масиву
+		function getArrPrices() {
+			const arr = []
+			for (let i = 0; i < 10; i++) {
+				const price = parseFloat(prompt('Введіть ціну'))
+				arr.push(price)
+			}
+			return arr
+		}
+		const prices = getArrPrices()
+		let percent = 20
+		// Функція визначення суми податку і створення масиву з цими значеннями
+		function getTaxPriceArr(prices) {
+			const arr = []
+			for (let i = 0; i < prices.length; i++) {
+				let taxPrice =  prices[i] * (percent / 100)
+				arr.push(taxPrice)
+			}
+			return arr
+		}
+		const taxPriceArr = getTaxPriceArr(prices)
+		document.write(`Новий масив з сумами податку: ${taxPriceArr}`)
+	</script>
+	
+</body>
+</html>
