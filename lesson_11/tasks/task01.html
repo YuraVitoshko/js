@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Задача 1</h1>
+	<p>
+		Знайти суми елементів у вказаній області
+	</p>
+
+<script>
+	// 1) Знайти суму елементів верхнього лівого кута
+	const arr = [
+		[12, 15, 20, 30],
+		[7, 10, 15, 20],
+		[25, 5, 30, 55],
+		[30, 45, 10, 70]
+	]
+	let sumTopLeft = 0
+	for (let rowIndex = 0; rowIndex <= 1; rowIndex++) {
+		for (let colIndex = 0; colIndex <= 1; colIndex++) {
+			sumTopLeft += arr[rowIndex][colIndex]
+		}
+	}
+	console.log(sumTopLeft);
+	// 2) Знайти суму елементів верхнього правого кута
+	let sumTopRight = 0
+	for (let rowIndex = 0; rowIndex <= 1; rowIndex++) {
+		for (let colIndex = 2; colIndex <= 3; colIndex++) {
+			sumTopRight += arr[rowIndex][colIndex]
+		}
+	}
+	console.log(sumTopRight);
+	// 3) Знайти суму елементів нижнього лівого кута
+	let sumBottomLeft = 0
+	for (let rowIndex = 2; rowIndex <= 3; rowIndex++) {
+		for (let colIndex = 0; colIndex <= 1; colIndex++) {
+			sumBottomLeft += arr[rowIndex][colIndex]
+		}
+	}
+	console.log(sumBottomLeft);
+	// 4) Знайти суму елементів нижнього правого кута
+	let sumBottomRight = 0
+	for (let rowIndex = 2; rowIndex <= 3; rowIndex++) {
+		for (let colIndex = 2; colIndex <= 3; colIndex++) {
+			sumBottomRight += arr[rowIndex][colIndex]
+		}
+	}
+	console.log(sumBottomRight);
+	// 5) Знайти суму елементів парних рядків
+	let sumEvenRows = 0
+	for (let rowIndex = 0; rowIndex <= 3; rowIndex += 2) {
+		for (let colIndex = 0; colIndex <= 3; colIndex++) {
+			sumEvenRows += arr[rowIndex][colIndex]
+		}
+	}
+	console.log(sumEvenRows);
+	// 6) Знайти суму елементів непарних стовпців
+	let sumOddCol = 0
+	for (let rowIndex = 0; rowIndex <= 3; rowIndex++) {
+		for (let colIndex = 1; colIndex <= 3; colIndex +=2) {
+			sumOddCol += arr[rowIndex][colIndex]
+		}
+	}
+	console.log(sumOddCol);
+	// 7) Знайти суму елементів у парних рядках непарних стовпців
+	let sumEvenRowsOddCol = 0
+	for (let rowIndex = 0; rowIndex <= 3; rowIndex += 2) {
+		for (let colIndex = 1; colIndex <= 3; colIndex +=2) {
+			sumEvenRowsOddCol += arr[rowIndex][colIndex]
+		}
+	}
+	console.log(sumEvenRowsOddCol);
+	// 8) Знайти суму елементів у непарних рядках парних стовпців
+	let sumOddColEvenRows = 0
+	for (let rowIndex = 1; rowIndex <= 3; rowIndex += 2) {
+		for (let colIndex = 0; colIndex <= 3; colIndex +=2) {
+			sumOddColEvenRows += arr[rowIndex][colIndex]
+		}
+	}
+	console.log(sumOddColEvenRows);
+</script>
+
+</body>
+</html>
