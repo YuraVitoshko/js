@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 3</h1>
+	<p>
+		Дано масив 30 випадкових цілих чисел. Підрахувати скільки було обмінів під час сортування включеннями.
+	</p>
+
+	<script>
+
+		const array = [
+			5, 25, 15, 86, 95, 12, 46, 75, 31, 105, 42, 86, 49, 13, 17, 53, 27, 18, 28, 64, 37, 81, 60, 37, 86, 91, 40, 12, 19, 110
+		]
+		function insertionSort(arr) {
+			let swaps = 0
+			// Проходимо циклом по елементам масиву, починаючи з другого (індекс 1)
+			for (let i = 1; i < arr.length; i++) {
+				let current = arr[i]; // Зберігаємо поточний елемент у змінну
+				let j = i - 1; // Починаємо порівняння з попереднього елемента
+				// Порівнюємо поточний елемент з кожним елементом зліва від нього
+				while (j >= 0 && arr[j] > current) {
+					arr[j + 1] = arr[j]; // Зсуваємо елементи праворуч
+					j--; // Зменшуємо індекс на 1, щоб перейти до наступного елемента
+				}
+				// Вставляємо поточний елемент на його правильну позицію
+				arr[j + 1] = current;
+				swaps ++
+			}
+			return swaps; // Повертаємо відсортований масив
+		}
+		const numExchanges = insertionSort(array)
+		console.log(`Кількість обмінів = ${numExchanges}`);
+	</script>
+
+</body>
+
+</html>

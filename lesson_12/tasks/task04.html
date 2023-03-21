@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 4</h1>
+	<p>
+		Для розглянутих методів сортування спробувати вивести етапи сортування шляхом виведення відповідних таблиць за зразком.
+		Тобто кожного разу після обміну елементів вивести поточний стан масиву на екран.
+	</p>
+
+	<script>
+
+		const array01 = [5, 25, 15, 86, 95, 12, 46]
+		
+		// Сортування бульбашкою
+		document.write(`<table border='2px'>`)
+		let isSorted
+		do {
+			isSorted = false; // перед кожним проходом встановлюємо змінну isSwapped в false
+				for (let i = 0; i < array01.length - 1; i++) {
+				if (array01[i] > array01[i + 1]) { // порівнюємо сусідні елементи
+					let temp = array01[i]; // якщо поточний елемент більший за наступний, то ми обмінюємо їх місцями
+					array01[i] = array01[i + 1];
+					array01[i + 1] = temp;
+					isSorted = true; // позначаємо, що здійснено обмін
+					document.write(`<tr>`)
+					document.write(`<td>${array01}</td>`)
+					document.write(`</tr>`)
+				}
+			}
+		} while (isSorted); // продовжуємо поки здійснено якийсь обмін
+		document.write(`</table>`)
+
+		// Сортування змішуванням 
+		const array02 = [5, 25, 15, 86, 95, 12, 46]
+		document.write(`<table border='2px'>`)
+		let left = 0
+		let right = array02.length - 1
+		while (left < right) {
+			for (let i = left; i < right; i++) {
+				if (array02[i] > array02[i + 1]) {
+					let temp = array02[i]
+					array02[i] = array02[i + 1]
+					array02[i + 1] = temp
+				}
+			}
+			right--
+			for (let i = right; i > left; i--) {
+				if (array02[i] < array02[i - 1]) {
+					let temp = array02[i]
+					array02[i] = array02[i - 1]
+					array02[i - 1] = temp
+				}
+			}
+			left++
+			document.write(`<tr>`)
+			document.write(`<td>${array02}</td>`)
+			document.write(`</tr>`)
+		}
+		document.write(`</table>`)
+
+		// Сортування включеннями
+		const array03 = [5, 25, 15, 86, 95, 12, 46]
+		document.write(`<table border='2px'>`)
+		for (let i = 1; i < array03.length; i++) {
+			let current = array03[i]; // Зберігаємо поточний елемент у змінну
+			let j = i - 1; // Починаємо порівняння з попереднього елемента
+			// Порівнюємо поточний елемент з кожним елементом зліва від нього
+			while (j >= 0 && array03[j] > current) {
+				array03[j + 1] = array03[j]; // Зсуваємо елементи праворуч
+				j--; // Зменшуємо індекс на 1, щоб перейти до наступного елемента
+			}
+			// Вставляємо поточний елемент на його правильну позицію
+			array03[j + 1] = current;
+			document.write(`<tr>`)
+			document.write(`<td>${array03}</td>`)
+			document.write(`</tr>`)
+		}
+		document.write(`</table>`)
+
+	</script>
+
+</body>
+
+</html>

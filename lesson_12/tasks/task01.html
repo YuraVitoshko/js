@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача 1</h1>
+	<p>
+		Дано масив 30 випадкових цілих чисел. Підрахувати скільки було обмінів під час сортування бульбашкою.
+	</p>
+		
+	<script>
+
+		const array = [
+			5, 25, 15, 86, 95, 12, 46, 75, 31, 105, 42, 86, 49, 13, 17, 53, 27, 18, 28, 64, 37, 81, 60, 37, 86, 91, 40, 12, 19, 70
+		]
+		function bubbleSort(arr) {
+			let swaps = 0;
+			let isSorted
+			do {
+				isSorted = false; // перед кожним проходом встановлюємо змінну isSwapped в false
+					for (let i = 0; i < array.length - 1; i++) {
+					if (array[i] > array[i + 1]) { // порівнюємо сусідні елементи
+						let temp = array[i]; // якщо поточний елемент більший за наступний, то ми обмінюємо їх місцями
+						array[i] = array[i + 1];
+						array[i + 1] = temp;
+						isSorted = true; // позначаємо, що здійснено обмін
+						swaps++; // збільшуємо кількість обмінів
+					}
+				}
+			} while (isSorted); // продовжуємо поки здійснено якийсь обмін
+			return swaps;
+		}
+		const numExchanges = bubbleSort(array)
+		console.log(`Кількість обмінів = ${numExchanges}`);
+	</script>
+	
+</body>
+</html>
