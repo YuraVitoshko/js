@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Задача 1</h1>
+	<p>
+		Описати масив об’єктів – сайтів розроблених компанією з такими властивостями
+		----- Властивості ------
+		назва компанії на час розробки (назву періодично змінюють) 
+		власник компанії
+		споснсори (масив спонсорів)
+		      * прізвище спонсора
+		      * ім’я  спонсора
+		      * сума вкладень спонсора
+		рік випуску
+		вартість сайту
+		Знайти:
+		<ul>
+			<li>загальну вартість усіх сайтів</li>
+			<li>кількість сайтів, що було зроблено між 2000 та 2009 рр.</li>
+			<li>кількість сайтів, де сума спонсорських вкладень була більшою за 100000</li>
+			<li>створити загальний список усіх спонсорів (поки можуть повторюватись, просто зібрати усі у масив)</li>
+			<li>знайти рік, коли прибуток був найбільшим</li>
+			<li>упорядкувати список за спаданням прибутку</li>
+			<li>Створити 2 окремих списки з копіями об’єктів, що містять сайти з вартість до 10000 і більше 10000</li>
+		</ul>
+
+	</p>
+
+<script>
+
+	const sitesArr = [
+		{
+			nameCompany : 'Top Star',
+			owner : 'Igor Bilyk',
+			sponsors : {
+				firstName: 'Kovalenko',
+				secondName : 'Petro',
+				amountOfInvestments : 200000
+			},
+			releaseYear : 2018,
+			price : 7000
+		},
+		{
+			nameCompany : 'Web-Pro',
+			owner : 'Anton Petrenko',
+			sponsors : {
+				firstName: 'Stepaniuk',
+				secondName : 'Ruslan',
+				amountOfInvestments : 50000
+			},
+			releaseYear : 2007,
+			price : 10000
+		},
+		{
+			nameCompany : 'Digital Craft',
+			owner : 'Yurii Rudenko',
+			sponsors : {
+				firstName: 'Vozniuk',
+				secondName : 'Ivan',
+				amountOfInvestments : 30000
+			},
+			releaseYear : 2013,
+			price : 6000
+		},
+		{
+			nameCompany : 'Code Minds',
+			owner : 'Stepan Basiuk',
+			sponsors : {
+				firstName: 'Rugko',
+				secondName : 'Alina',
+				amountOfInvestments : 120000
+			},
+			releaseYear : 2016,
+			price : 5000
+		},
+		{
+			nameCompany : 'Web Creators',
+			owner : 'Andrew Sergiuk',
+			sponsors : {
+				firstName: 'Zinchenko',
+				secondName : 'Artem',
+				amountOfInvestments : 50000
+			},
+			releaseYear : 2023,
+			price : 11000
+		}
+	]
+		//======================================================================================================================================
+		
+	// загальну вартість усіх сайтів
+	// ------------1-------------
+	let totalPriceAllSites = sitesArr.reduce((prevSum, site) => prevSum + site.price, 0)
+	// ------------2-------------
+	// let totalPriceAllSites = 0
+	// for (const site of sitesArr) {
+	// 	totalPriceAllSites += site.price
+	// }
+	// -----------3-------------
+	// let totalPriceAllSites = 0
+	// for (let siteNum = 0; siteNum < sitesArr.length; siteNum++) {
+	// 	totalPriceAllSites += sitesArr[siteNum].price
+	// }
+	console.log(`Загальна вартість сайтів = ${totalPriceAllSites}`);
+	//======================================================================================================================================
+		// кількість сайтів, що було зроблено між 2000 та 2009 рр.
+		// ------------1-------------
+		let counterSitesBetween2000And2009 = 0
+		for (const site of sitesArr) {
+			if (site.releaseYear > 2000 && site.releaseYear < 2009) counterSitesBetween2000And2009++
+		}
+		// ------------2-------------
+		// let counterSitesBetween2000And2009 = 0
+		// for (let siteNUum = 0; siteNUum < sitesArr.length; siteNUum++) {
+		// 	if (sitesArr[siteNUum].releaseYear > 2000 && sitesArr[siteNUum].releaseYear < 2009) counterSitesBetween2000And2009++
+		// }
+		// ------------3-------------
+		// let counterSitesBetween2000And2009 = sitesArr.reduce((counter, site) => {
+		// 	if ((site.releaseYear > 2000 && site.releaseYear < 2009)) counter ++
+		// 	return prevCounter
+		// },0)
+		
+		console.log(`Кількість сайтів зроблених між 2000-2009рр = ${counterSitesBetween2000And2009}`);
+		//======================================================================================================================================
+		// кількість сайтів, де сума спонсорських вкладень була більшою за 100000
+		// ------------1-------------
+		// let counterSiteGreaterThan100000 = 0
+		// for (let siteNUum = 0; siteNUum < sitesArr.length; siteNUum++) {
+		// 	if (sitesArr[siteNUum].sponsors.amountOfInvestments > 100000) counterSiteGreaterThan100000 ++
+		// }
+		// ------------2-------------
+		let counterSiteGreaterThan100000 = 0
+		for (const site of sitesArr) {
+			if (site.sponsors.amountOfInvestments > 100000) counterSiteGreaterThan100000 ++
+		}
+		// ------------3-------------
+		// let counterSiteGreaterThan100000 = sitesArr.reduce((counter, site) => {
+		// 	if (site.sponsors.amountOfInvestments > 100000) counter ++
+		// 	return counter
+		// },0)
+		console.log(`Кількість сайтів де спонсорська сума більше 100000 = ${counterSiteGreaterThan100000}`);
+		//===============================================================================================================================
+		// створити загальний список усіх спонсорів (поки можуть повторюватись, просто зібрати усі у масив)
+		let listSponsorsArr = sitesArr.reduce((arr, site) => {
+			arr.push(site.sponsors)
+			return arr 
+		} ,[])
+		console.log(`Масив спонсорів: ${JSON.stringify(listSponsorsArr)}`);
+		//===================================================================================================================================
+		// знайти рік, коли прибуток був найбільшим
+		let yearInMaxProfit = sitesArr.reduce((prevMaxProfit, site) => {
+			if (site.price > prevMaxProfit) prevMaxProfit = site.price
+			return site.releaseYear
+		})
+		console.log(`Найбільший прибуток був у ${yearInMaxProfit}р.`);
+		//===================================================================================================================================
+		// упорядкувати список за спаданням прибутку
+		const listByProfitDropDown = sitesArr.sort((el1, el2) => {
+			let a = el1.price
+			let b = el2.price
+			return b - a
+		})
+		console.log(listByProfitDropDown);
+		//========================================================================================================================================
+		// Створити 2 окремих списки з копіями об’єктів, що містять сайти з вартість до 10000 і більше 10000
+		let listPriceSiteLessThan10000 = sitesArr.filter(site => site.price < 10000)
+		console.log(`Список у якому об'єкти що містять сайти вартістю до 10000: ${JSON.stringify(listPriceSiteLessThan10000)}`);
+
+		let listPriceSiteGreaterThan10000 = sitesArr.filter(site => site.price > 10000)
+		console.log(`Список у якому об'єкти що містять сайти вартістю більше 10000: ${JSON.stringify(listPriceSiteGreaterThan10000)}`);
+</script>
+
+</body>
+</html>
