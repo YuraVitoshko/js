@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	<h2>Задача 5</h2>
+
+	<p>
+		Розробити клас «Керівник танців»<br><br>
+
+		Поля <br>
+		Масив імен хлопців<br>
+		Масив імен дівчат<br><br>
+
+		Метод <br>
+		Метод випадкового вибору імені хлопця<br>
+		Метод випадкового вибору імені дівчини<br>
+		Метод виведення пари для танців<br>
+		Метод run , який ініціює через кожні 5 секунд виведення нової пари для танців<br>
+		
+	</p>
+
+	<script>
+		
+		class TeacherDance {
+			constructor(){
+				// Масив імен хлопців
+				this.namesBoys = ['Іван', 'Ігор', 'Валерій', 'Степан', 'Андрій'],
+				// Масив імен дівчат
+				this.namesGirls = ['Наталія', 'Світлана', 'Ольга', 'Сніжана', 'Катерина']
+			}
+			// Метод випадкового вибору імені хлопця
+			getRandomNameBoy() {
+				const boy =  Math.floor(Math.random() * this.namesBoys.length)
+				return this.namesBoys[boy]
+			}
+			// Метод випадкового вибору імені дівчини
+			getRandomNameGirl() {
+				const girl = Math.floor(Math.random() * this.namesGirls.length)
+				return this.namesGirls[girl]
+			}
+			// Метод виведення пари для танців
+			getRandomCoupleForDancing() {
+				const boy = this.getRandomNameBoy()
+				const girl = this.getRandomNameGirl()
+				return `Пара для танців : ${boy} та ${girl}`
+			}
+			// Метод run , який ініціює через кожні 5 секунд виведення нової пари для танців
+			run() {
+				setInterval(() => {
+					const couple = this.getRandomCoupleForDancing()
+					console.log(couple);
+				}, 5000) 
+			}
+		}
+		const teacherDance = new TeacherDance()
+		teacherDance.run()
+
+	</script>
+
+</body>
+</html>

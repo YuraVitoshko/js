@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	<h2>Задача 1</h2>
+
+	<p>
+		Створити об’єкт «Тир». У масиві зберігаються 1, якщо у цьому квадраті є заєць і 0 в іншому випадку. <br>
+		Тир <br>
+		Поля(властивості) - Масив, у якому зберігається поле з зайцями <br>
+		Методи (дії) - Метод пострілу (задається позиція пострілу). Виведення ігрового поля <br>
+
+	</p>
+
+	<script>
+		// X - Це заєць, Y - Це порожнє поле
+		let shootingGallery = {
+			// Поля(властивості) - Масив, у якому зберігається поле з зайцями 
+			poligon : [1, 0, 0, 1, 0, 1, 0, 0, 1],
+			// Методи (дії) - Метод пострілу (задається позиція пострілу).
+			getShot : function(userShot){
+				if (this.poligon[userShot] === 1) {
+					console.log('Ви влучили в зайця!');
+					this.poligon[userShot] = 0
+				} else {
+					console.log('Ви промахнулися!');
+				}
+				this.printField()
+			},
+			//  Виведення ігрового поля
+			printField : function(){
+				console.log('Ігрове поле:');
+				let field = ''
+				for (let i = 0; i < this.poligon.length; i++) {
+					if (this.poligon[i] === 1) {
+						field += 'X'
+					} else {
+						field += 'Y'
+					}
+				}
+				console.log(field);
+			}
+		}
+
+		shootingGallery.getShot(0)
+		shootingGallery.getShot(5)
+
+	</script>
+
+</body>
+</html>

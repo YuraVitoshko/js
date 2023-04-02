@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	<h2>Задача 4</h2>
+
+	<p>
+		Розробити клас Baner <br> <br>
+		Поля(властивості) - Масив об’єктів ( графічних зображень та посилань на сайти) <br><br>
+
+		Метод випадкового вибору об’єкта (графічного зображення та посилання) <br>
+		Метод виведення випадкового банера<br>
+		
+	</p>
+
+	<script>
+		
+		class Baner{
+			constructor(){
+				// Масив об’єктів ( графічних зображень та посилань на сайти)
+				this.bannersList = [
+					{
+						image: '<img src="/img/tesla.png">',
+						link: 'https://www.tesla.com/'
+					},
+					{
+						image: '<img src="/img/rozetka.svg">',
+						link: 'https://rozetka.com.ua/'
+					},
+					{
+						image: '<img src="/img/prom.webp">',
+						link: 'https://prom.ua/'
+					},
+				]
+			}
+			// Метод випадкового вибору об’єкта (графічного зображення та посилання)
+			getRAndomBanner() {
+				let randomBanner = Math.floor(Math.random() * this.bannersList.length)
+				return this.bannersList[randomBanner]
+			}
+			// Метод виведення випадкового банера
+			getOutput() {
+				let bannerRandom = this.getRAndomBanner()
+				document.write(`<a href='${bannerRandom.link}'> <img src='${bannerRandom.image}'> </a>`)
+			}
+		}
+		let myBanner = new Baner()
+		myBanner.getOutput()
+
+	</script>
+
+</body>
+</html>

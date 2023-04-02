@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	<h2>Задача 2</h2>
+
+	<p>
+		Створити об’єкт «Авто». <br> <br>
+		Поля(властивості) - Марка <br>
+		Розмір бака<br>
+		Кількість наявних літрів<br>
+		Кількість місць<br>
+		Кількість пасажирів<br><br>
+
+		Методи (дії) - Заправка на вказану кількість літрів <br>
+		Виведення кількості пасажирів <br>
+		Додавання пасажирів<br>
+		Висадка пасажирів<br>
+		
+	</p>
+
+	<script>
+		
+		let auto = {
+			// Поля(властивості)
+			// Марка
+			model : 'Audi',
+			// Розмір бака
+			tankVolume : 60,
+			// Кількість наявних літрів
+			numLiters : 35,
+			// Кількість місць
+			numSeats : 5,
+			// Кількість пасажирів
+			numPassengers : 3,
+
+			// Методи (дії)
+			// Заправка на вказану кількість літрів
+			refuel : function(liters) {
+				if (this.numLiters + liters <= this.tankVolume) {
+					this.numLiters += liters
+					console.log(`Авто заправлено на ${liters} літрів, поточний кількість літрів бензину у баці = ${this.numLiters} літрів`)
+				} else {
+					console.log(`Заправка на ${liters} літрів перевищує об'єм баку авто`)
+				}
+			},
+			// Виведення кількості пасажирів
+			showPassengers : function(){
+				console.log(`Поточна кількість пасажирів = ${this.numPassengers}`)
+			},
+			// Додавання пасажирів
+			addPassengers : function(num) {
+				if ((this.numPassengers + num) <= this.numSeats) {
+					this.numPassengers += num
+					console.log(`Поточна кількість пасажирів з урахуванням тих що додалися = ${this.numPassengers}`)
+				} else {
+					console.log(`Кількість пасажирів які хочуть підсісти перевищує максимальну кількість місць які є в авто`)
+				}
+			},
+			// Висадка пасажирів
+			removePassengers : function(num) {
+				if ((this.numPassengers - num) >= 0) {
+					this.numPassengers -= num
+					console.log(`Висаджено ${num} пасажирів, поточна кількість пасажирів = ${this.numPassengers}`)
+				} else {
+					console.log(`Кількість пасажирів яких потрібно висадити перевищує поточну кількість пасажирів які є в авто`);
+				}
+			}
+		}
+
+		auto.refuel(10)
+		auto.showPassengers()
+		auto.addPassengers(2)
+		auto.removePassengers(6)
+
+		
+	</script>
+
+</body>
+</html>
